@@ -91,6 +91,8 @@ export default function ForgotPassword({ navigate }: { navigate: (path: string) 
                         <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
                         <span>•</span>
                         <a href="#" className="hover:text-primary transition-colors">Service Terms</a>
+                        <span>•</span>
+                        <button onClick={() => navigate('sitemap')} className="hover:text-primary transition-colors uppercase font-bold opacity-100 text-primary">Sitemap</button>
                     </div>
                 </div>
 

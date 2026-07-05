@@ -15,6 +15,7 @@ export default function LegalPolicies({ navigate }: { navigate: (path: string) =
                     <nav className="hidden md:flex items-center gap-8">
                         <a className="text-base font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#tos">Terms of Service</a>
                         <a className="text-base font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#privacy">Privacy Policy</a>
+                        <button onClick={() => navigate('sitemap')} className="text-base font-bold text-primary hover:underline transition-colors">Sitemap</button>
                     </nav>
                     <div className="flex items-center gap-4">
                         <button onClick={() => navigate('login')} className="flex items-center gap-2 px-4 py-2 rounded-lg border border-outline text-primary text-base font-semibold hover:bg-surface-container-high transition-all active:scale-95">

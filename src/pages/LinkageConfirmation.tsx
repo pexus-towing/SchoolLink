@@ -54,7 +54,7 @@ export default function LinkageConfirmation({ navigate }: { navigate: (path: str
                         </div>
 
                         <div className="w-full space-y-4">
-                            <button onClick={() => navigate('dashboard')} className="w-full bg-primary-container hover:bg-primary text-on-primary text-base font-semibold py-4 px-6 rounded-lg transition-all duration-200 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2">
+                            <button onClick={() => navigate('parent_dashboard')} className="w-full bg-primary-container hover:bg-primary text-on-primary text-base font-semibold py-4 px-6 rounded-lg transition-all duration-200 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2">
                                 Confirm and Continue
                                 <ArrowRight className="w-5 h-5" />
                             </button>
@@ -66,16 +66,19 @@ export default function LinkageConfirmation({ navigate }: { navigate: (path: str
                     </div>
                 </div>
                 
-                <div className="mt-8 flex items-center justify-center gap-4 text-outline">
-                    <div className="flex items-center gap-1">
-                        <Lock className="w-4 h-4" />
-                        <span className="text-[12px] font-medium">Secure Linkage</span>
+                <div className="mt-8 flex flex-col items-center justify-center gap-4 text-outline">
+                    <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-1">
+                            <Lock className="w-4 h-4" />
+                            <span className="text-[12px] font-medium">Secure Linkage</span>
+                        </div>
+                        <div className="w-1 h-1 bg-outline-variant rounded-full"></div>
+                        <div className="flex items-center gap-1">
+                            <ShieldCheck className="w-4 h-4" />
+                            <span className="text-[12px] font-medium">Official Record</span>
+                        </div>
                     </div>
-                    <div className="w-1 h-1 bg-outline-variant rounded-full"></div>
-                    <div className="flex items-center gap-1">
-                        <ShieldCheck className="w-4 h-4" />
-                        <span className="text-[12px] font-medium">Official Record</span>
-                    </div>
+                    <button onClick={() => navigate('sitemap')} className="text-xs font-bold text-primary hover:underline uppercase tracking-wider">Sitemap</button>
                 </div>
             </main>
 

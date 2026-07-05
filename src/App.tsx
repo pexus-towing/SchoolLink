@@ -8,6 +8,24 @@ import LinkageConfirmation from './pages/LinkageConfirmation';
 import RoleSelection from './pages/RoleSelection';
 import LegalPolicies from './pages/LegalPolicies';
 import SupportDashboard from './pages/SupportDashboard';
+import ParentDashboard from './pages/ParentDashboard';
+import ChildSwitcher from './pages/ChildSwitcher';
+import AttendanceParentView from './pages/AttendanceParentView';
+import GradesParentView from './pages/GradesParentView';
+import HomeworkParentView from './pages/HomeworkParentView';
+import AnnouncementsParentView from './pages/AnnouncementsParentView';
+import AnnouncementDetailParentView from './pages/AnnouncementDetailParentView';
+import ParentProfile from './pages/ParentProfile';
+import NotificationsInbox from './pages/NotificationsInbox';
+import TeacherDashboard from './pages/TeacherDashboard';
+import TeacherClassSelector from './pages/TeacherClassSelector';
+import TeacherAttendanceMarking from './pages/TeacherAttendanceMarking';
+import TeacherAttendanceHistory from './pages/TeacherAttendanceHistory';
+import TeacherGradeEntry from './pages/TeacherGradeEntry';
+import TeacherGradeHistory from './pages/TeacherGradeHistory';
+import TeacherHomeworkPosting from './pages/TeacherHomeworkPosting';
+import Sitemap from './pages/Sitemap';
+import { Map } from 'lucide-react';
 
 export default function App() {
     const [route, setRoute] = useState('splash');
@@ -23,6 +41,23 @@ export default function App() {
             case 'role_selection': return <RoleSelection navigate={setRoute} />;
             case 'legal': return <LegalPolicies navigate={setRoute} />;
             case 'dashboard': return <SupportDashboard navigate={setRoute} />;
+            case 'parent_dashboard': return <ParentDashboard navigate={setRoute} />;
+            case 'child_switcher': return <ChildSwitcher navigate={setRoute} />;
+            case 'attendance_parent': return <AttendanceParentView navigate={setRoute} />;
+            case 'grades_parent': return <GradesParentView navigate={setRoute} />;
+            case 'homework_parent': return <HomeworkParentView navigate={setRoute} />;
+            case 'announcements_parent': return <AnnouncementsParentView navigate={setRoute} />;
+            case 'announcement_detail': return <AnnouncementDetailParentView navigate={setRoute} />;
+            case 'parent_profile': return <ParentProfile navigate={setRoute} />;
+            case 'notifications_inbox': return <NotificationsInbox navigate={setRoute} />;
+            case 'teacher_dashboard': return <TeacherDashboard navigate={setRoute} />;
+            case 'teacher_classes': return <TeacherClassSelector navigate={setRoute} />;
+            case 'teacher_attendance': return <TeacherAttendanceMarking navigate={setRoute} />;
+            case 'teacher_attendance_history': return <TeacherAttendanceHistory navigate={setRoute} />;
+            case 'teacher_grades_entry': return <TeacherGradeEntry navigate={setRoute} />;
+            case 'teacher_grade_history': return <TeacherGradeHistory navigate={setRoute} />;
+            case 'teacher_homework': return <TeacherHomeworkPosting navigate={setRoute} />;
+            case 'sitemap': return <Sitemap navigate={setRoute} />;
             default: return <Splash navigate={setRoute} />;
         }
     };

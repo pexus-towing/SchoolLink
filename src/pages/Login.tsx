@@ -36,7 +36,7 @@ export default function Login({ navigate }: { navigate: (path: string) => void }
                             <label className="block text-base font-semibold text-on-surface" htmlFor="identifier">Email or Phone Number</label>
                             <div className="relative">
                                 <AtSign className="absolute left-3 top-1/2 -translate-y-1/2 text-outline w-5 h-5" />
-                                <input className="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg text-base text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="identifier" placeholder="e.g. admin@school.edu.gh" required type="text" />
+                                <input className="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg text-base text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="identifier" placeholder="e.g. admin@school.edu.gh" required type="text" defaultValue="admin@school.edu.gh" />
                             </div>
                         </div>
                         <div className="space-y-2">
@@ -46,14 +46,14 @@ export default function Login({ navigate }: { navigate: (path: string) => void }
                             </div>
                             <div className="relative">
                                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-outline w-5 h-5" />
-                                <input className="w-full pl-10 pr-12 py-3 bg-white border border-outline-variant rounded-lg text-base text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="password" placeholder="Enter your password" required type={showPassword ? "text" : "password"} />
+                                <input className="w-full pl-10 pr-12 py-3 bg-white border border-outline-variant rounded-lg text-base text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="password" placeholder="Enter your password" required type={showPassword ? "text" : "password"} defaultValue="password123" />
                                 <button className="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors" onClick={() => setShowPassword(!showPassword)} type="button">
                                     {showPassword ? <EyeOff className="w-5 h-5"/> : <Eye className="w-5 h-5"/>}
                                 </button>
                             </div>
                         </div>
                         <div className="flex items-center">
-                            <input className="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" id="remember" type="checkbox" />
+                            <input className="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" id="remember" type="checkbox" defaultChecked={true} />
                             <label className="ml-2 text-sm text-on-surface-variant" htmlFor="remember">Keep me logged in on this device</label>
                         </div>
                         <button className="w-full py-4 bg-primary text-on-primary text-base font-semibold rounded-lg hover:bg-primary-container transition-colors duration-200 active:scale-[0.98] flex items-center justify-center gap-2 shadow-sm" type="submit" disabled={loading}>
@@ -88,6 +88,7 @@ export default function Login({ navigate }: { navigate: (path: string) => void }
                     <button onClick={()=>navigate('linkage_confirmation')} className="hover:underline">View Linkage Confirmation</button>
                     <button onClick={()=>navigate('legal')} className="hover:underline">View Legal Policies</button>
                     <button onClick={()=>navigate('reset_password')} className="hover:underline">View Reset Password</button>
+                    <button onClick={()=>navigate('sitemap')} className="hover:underline font-bold text-primary opacity-100">Sitemap</button>
                 </div>
             </main>
         </div>

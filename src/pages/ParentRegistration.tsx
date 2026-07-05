@@ -25,39 +25,39 @@ export default function ParentRegistration({ navigate }: { navigate: (path: stri
                     <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); navigate('linkage_confirmation'); }}>
                         <div className="space-y-1.5">
                             <label className="block text-xs font-bold text-primary uppercase">Full Name</label>
-                            <input className="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg text-base outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Enter your full legal name" required type="text" />
+                            <input className="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg text-base outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="Enter your full legal name" required type="text" defaultValue="John Doe" />
                         </div>
                         <div className="space-y-1.5">
                             <label className="block text-xs font-bold text-primary uppercase">Phone Number</label>
                             <div className="relative flex items-center border border-outline-variant rounded-lg bg-white overflow-hidden focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
                                 <div className="pl-4 pr-2 text-outline"><Phone className="w-5 h-5"/></div>
-                                <input className="w-full py-3 pr-4 bg-transparent border-none text-base outline-none focus:ring-0" placeholder="+233 00 000 0000" required type="tel" />
+                                <input className="w-full py-3 pr-4 bg-transparent border-none text-base outline-none focus:ring-0" placeholder="+233 00 000 0000" required type="tel" defaultValue="+233 24 123 4567" />
                             </div>
                         </div>
                         <div className="space-y-1.5">
                             <label className="block text-xs font-bold text-primary uppercase">Email Address (Optional)</label>
-                            <input className="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg text-base outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="email@example.com" type="email" />
+                            <input className="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg text-base outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="email@example.com" type="email" defaultValue="john.doe@example.com" />
                         </div>
                         <div className="space-y-1.5">
                             <label className="block text-xs font-bold text-primary uppercase">School-issued Invite Code</label>
                             <div className="relative flex items-center border border-outline-variant rounded-lg bg-white overflow-hidden focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
                                 <div className="pl-4 pr-2 text-outline"><Key className="w-5 h-5"/></div>
-                                <input className="w-full py-3 pr-4 bg-transparent border-none text-base outline-none focus:ring-0" placeholder="Enter unique registration code" required type="text" />
+                                <input className="w-full py-3 pr-4 bg-transparent border-none text-base outline-none focus:ring-0" placeholder="Enter unique registration code" required type="text" defaultValue="SL-2024-892" />
                             </div>
                             <p className="text-[11px] text-on-surface-variant/70 italic">This code is provided by the school administration for account verification.</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-1.5">
                                 <label className="block text-xs font-bold text-primary uppercase">Create Password</label>
-                                <input className="w-full py-3 px-4 bg-white border border-outline-variant rounded-lg text-base outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="••••••••" required type="password" />
+                                <input className="w-full py-3 px-4 bg-white border border-outline-variant rounded-lg text-base outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="••••••••" required type="password" defaultValue="password123" />
                             </div>
                             <div className="space-y-1.5">
                                 <label className="block text-xs font-bold text-primary uppercase">Confirm Password</label>
-                                <input className="w-full py-3 px-4 bg-white border border-outline-variant rounded-lg text-base outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="••••••••" required type="password" />
+                                <input className="w-full py-3 px-4 bg-white border border-outline-variant rounded-lg text-base outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary" placeholder="••••••••" required type="password" defaultValue="password123" />
                             </div>
                         </div>
                         <div className="flex items-start gap-3 pt-2">
-                            <input className="mt-1 w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" required type="checkbox" />
+                            <input className="mt-1 w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" required type="checkbox" defaultChecked={true} />
                             <label className="text-sm text-on-surface-variant">
                                 I accept the <button type="button" onClick={()=>navigate('legal')} className="text-primary font-semibold underline underline-offset-2">Terms of Use</button> and <button type="button" onClick={()=>navigate('legal')} className="text-primary font-semibold underline underline-offset-2">Privacy Policy</button>.
                             </label>
@@ -69,11 +69,12 @@ export default function ParentRegistration({ navigate }: { navigate: (path: stri
                             </button>
                         </div>
                     </form>
-                    <div className="mt-8 pt-6 border-t border-outline-variant text-center">
+                    <div className="mt-8 pt-6 border-t border-outline-variant text-center space-y-4">
                         <p className="text-sm text-on-surface-variant">
                             Already have an account? 
                             <button onClick={()=>navigate('login')} className="ml-1 text-primary font-bold hover:underline">Login</button>
                         </p>
+                        <button onClick={() => navigate('sitemap')} className="text-xs font-bold text-primary hover:underline uppercase tracking-wider">Sitemap</button>
                     </div>
                 </div>
             </div>

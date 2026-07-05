@@ -24,7 +24,7 @@ export default function RoleSelection({ navigate }: { navigate: (path: string) =
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
-                        <button onClick={() => navigate('dashboard')} className="group relative bg-surface-container-lowest border border-outline-variant p-8 rounded-xl text-left transition-all duration-300 hover:border-primary-container hover:shadow-xl hover:-translate-y-1">
+                        <button onClick={() => navigate('parent_dashboard')} className="group relative bg-surface-container-lowest border border-outline-variant p-8 rounded-xl text-left transition-all duration-300 hover:border-primary-container hover:shadow-xl hover:-translate-y-1">
                             <div className="flex flex-col h-full">
                                 <div className="w-16 h-16 rounded-full bg-secondary-container text-primary flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-primary-container group-hover:text-white group-hover:scale-110">
                                     <Users className="w-8 h-8" />
@@ -78,9 +78,13 @@ export default function RoleSelection({ navigate }: { navigate: (path: string) =
                     <div className="w-4 h-4 rounded-full bg-[#FCD116]"></div>
                     <div className="w-4 h-4 rounded-full bg-[#CE1126]"></div>
                 </div>
-                <p className="text-xs font-bold text-on-surface-variant opacity-60 uppercase tracking-widest">
-                    Official Academic Management System of Ghana Academy
-                </p>
+                <div className="flex items-center gap-2">
+                    <p className="text-xs font-bold text-on-surface-variant opacity-60 uppercase tracking-widest">
+                        Official Academic Management System of Ghana Academy
+                    </p>
+                    <span className="text-on-surface-variant opacity-60">•</span>
+                    <button onClick={() => navigate('sitemap')} className="text-xs font-bold text-primary hover:underline uppercase tracking-widest">Sitemap</button>
+                </div>
             </footer>
         </div>
     );

@@ -37,7 +37,11 @@ export default function SupportDashboard({ navigate }: { navigate: (path: string
                         </div>
                     ))}
                 </nav>
-                <div className="mt-auto px-4 space-y-1">
+                <div className="mt-auto px-4 space-y-1 pb-4">
+                    <div onClick={() => navigate('sitemap')} className="text-on-primary/70 hover:text-on-primary px-4 py-3 cursor-pointer transition-all duration-200 active:scale-95 flex items-center gap-3">
+                        <span className="w-5 h-5 flex items-center justify-center font-bold text-[10px] tracking-wider uppercase border border-on-primary/70 rounded-full">S</span>
+                        <span className="text-base">Sitemap</span>
+                    </div>
                     <div className="bg-primary-container text-on-primary-container rounded-lg mx-2 px-4 py-3 cursor-pointer transition-all duration-200 flex items-center gap-3">
                         <HelpCircle className="w-5 h-5" />
                         <span className="text-base">Help Center</span>
@@ -183,10 +187,10 @@ export default function SupportDashboard({ navigate }: { navigate: (path: string
                                     <a className="text-sm text-primary hover:underline" href="#">API Docs</a>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Legal</span>
+                                    <span className="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Legal & Navigation</span>
                                     <button onClick={() => navigate('legal')} className="text-sm text-primary hover:underline text-left">Privacy Policy</button>
                                     <button onClick={() => navigate('legal')} className="text-sm text-primary hover:underline text-left">Terms of Service</button>
-                                    <a className="text-sm text-primary hover:underline" href="#">GDPR Compliance</a>
+                                    <button onClick={() => navigate('sitemap')} className="text-sm text-primary hover:underline text-left font-bold">Sitemap</button>
                                 </div>
                             </div>
                             <div>

@@ -33,6 +33,9 @@ export default function Splash({ navigate }: { navigate: (path: string) => void 
 
     return (
         <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-[radial-gradient(circle_at_center,#ffffff_0%,#f8f9fb_100%)] overflow-hidden relative">
+            <button onClick={() => navigate('sitemap')} className="absolute top-6 right-6 z-50 text-sm font-bold text-primary hover:underline bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                Sitemap
+            </button>
             <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
                 <div className="w-full h-full bg-cover bg-center grayscale" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkTBEC2A7q6BCKMA7QOqQydmGp6yAvBA_1bcHmVrANCL8syelqeVly_W0h_z-0H8ECVaXm4-_VPA7oOk9DFhZSM3-qe_57rc5tBM1jYDN4e8TtynPTmSZrn1OqIDOviW8ZmhBcLKOjtpTRrs6a2IetqvwsUI1boG2bv_KjZbDqNPbgrhw9m2OZU2cstXK1QTCcSntxFoQiiKiZXSblP6bccwONNotHDosuLPgVisySsTqEQtGSSaZ0')"}}></div>
             </div>

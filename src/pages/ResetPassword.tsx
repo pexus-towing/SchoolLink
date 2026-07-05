@@ -95,6 +95,7 @@ export default function ResetPassword({ navigate }: { navigate: (path: string) =
                 </div>
                 <div className="bg-surface-container-low px-8 py-4 flex justify-between items-center text-[10px] uppercase tracking-widest text-outline">
                     <span>Security: 256-bit AES</span>
+                    <button onClick={() => navigate('sitemap')} className="text-primary hover:underline font-bold">SITEMAP</button>
                     <div className="flex items-center space-x-1">
                         <span className="w-2 h-2 rounded-full bg-tertiary"></span>
                         <span>System Secure</span>
