@@ -10,8 +10,8 @@ export default function AdminDashboard({ navigate }: { navigate: (path: string) 
     
     const navItems = [
         { icon: LayoutDashboard, label: 'Dashboard', path: 'admin_dashboard', active: true },
-        { icon: GraduationCap, label: 'Students', path: '#', active: false },
-        { icon: Users, label: 'Teachers', path: '#', active: false },
+        { icon: GraduationCap, label: 'Students', path: 'admin_students', active: false },
+        { icon: Users, label: 'Teachers', path: 'admin_teachers', active: false },
         { icon: Building2, label: 'Classes', path: '#', active: false },
         { icon: CalendarCheck, label: 'Attendance', path: '#', active: false },
         { icon: MessageSquare, label: 'Announcements', path: '#', active: false },
@@ -138,7 +138,10 @@ export default function AdminDashboard({ navigate }: { navigate: (path: string) 
                                 Quick Actions
                             </h3>
                             <div className="grid grid-cols-1 gap-3 flex-1">
-                                <button className="bg-[#F7F8FA] border border-gray-200 text-[#1F3864] rounded-lg p-4 flex items-center gap-4 hover:bg-[#DCE6F1] transition-colors shadow-sm text-left">
+                                <button 
+                                    onClick={() => navigate('admin_student_form')}
+                                    className="bg-[#F7F8FA] border border-gray-200 text-[#1F3864] rounded-lg p-4 flex items-center gap-4 hover:bg-[#DCE6F1] transition-colors shadow-sm text-left"
+                                >
                                     <div className="bg-white p-2 rounded-lg shadow-sm">
                                         <UserPlus className="w-5 h-5 text-[#1F3864]" />
                                     </div>
@@ -147,7 +150,10 @@ export default function AdminDashboard({ navigate }: { navigate: (path: string) 
                                         <span className="block text-xs font-semibold text-gray-500">Enroll a student</span>
                                     </div>
                                 </button>
-                                <button className="bg-[#F7F8FA] border border-gray-200 text-[#1F3864] rounded-lg p-4 flex items-center gap-4 hover:bg-[#DCE6F1] transition-colors shadow-sm text-left">
+                                <button 
+                                    onClick={() => navigate('admin_teachers')}
+                                    className="bg-[#F7F8FA] border border-gray-200 text-[#1F3864] rounded-lg p-4 flex items-center gap-4 hover:bg-[#DCE6F1] transition-colors shadow-sm text-left"
+                                >
                                     <div className="bg-white p-2 rounded-lg shadow-sm">
                                         <Users className="w-5 h-5 text-[#1F3864]" />
                                     </div>

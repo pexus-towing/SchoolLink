@@ -29,6 +29,11 @@ import TeacherAnnouncementPosting from './pages/TeacherAnnouncementPosting';
 import TeacherClassRoster from './pages/TeacherClassRoster';
 import TeacherProfile from './pages/TeacherProfile';
 import AdminDashboard from './pages/AdminDashboard';
+import AdminStudentList from './pages/AdminStudentList';
+import AdminStudentForm from './pages/AdminStudentForm';
+import AdminStudentDetail from './pages/AdminStudentDetail';
+import AdminTeacherList from './pages/AdminTeacherList';
+import AdminTeacherForm from './pages/AdminTeacherForm';
 import Sitemap from './pages/Sitemap';
 import { Map } from 'lucide-react';
 
@@ -67,6 +72,11 @@ export default function App() {
             case 'teacher_roster': return <TeacherClassRoster navigate={setRoute} />;
             case 'teacher_profile': return <TeacherProfile navigate={setRoute} />;
             case 'admin_dashboard': return <AdminDashboard navigate={setRoute} />;
+            case 'admin_students': return <AdminStudentList navigate={setRoute} />;
+            case 'admin_student_form': return <AdminStudentForm navigate={setRoute} />;
+            case 'admin_student_detail': return <AdminStudentDetail navigate={setRoute} />;
+            case 'admin_teachers': return <AdminTeacherList navigate={setRoute} />;
+            case 'admin_teacher_form': return <AdminTeacherForm navigate={setRoute} />;
             case 'sitemap': return <Sitemap navigate={setRoute} />;
             default: return <Splash navigate={setRoute} />;
         }

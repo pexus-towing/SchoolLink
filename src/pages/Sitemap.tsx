@@ -32,6 +32,11 @@ export default function Sitemap({ navigate }: { navigate: (path: string) => void
         { path: 'teacher_roster', name: 'Class Roster', description: 'View student list and parent contact information.' },
         { path: 'teacher_profile', name: 'Teacher Profile', description: 'View and edit profile information and settings.' },
         { path: 'admin_dashboard', name: 'Admin Dashboard', description: 'Overview of school statistics and quick links for administrators.' },
+        { path: 'admin_students', name: 'Admin Students List', description: 'Searchable directory of all student records.' },
+        { path: 'admin_student_form', name: 'Add/Edit Student', description: 'Form to add a new student or edit an existing one.' },
+        { path: 'admin_student_detail', name: 'Student Details', description: 'View student profile, guardian details, and academic history.' },
+        { path: 'admin_teachers', name: 'Admin Teachers List', description: 'Searchable directory of all teacher records.' },
+        { path: 'admin_teacher_form', name: 'Add/Edit Teacher', description: 'Form to add a new teacher or edit an existing one.' },
         { path: 'legal', name: 'Legal & Policies', description: 'Terms of Service and Privacy Policy.' },
     ];
 
