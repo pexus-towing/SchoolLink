@@ -26,7 +26,12 @@ export default function Sitemap({ navigate }: { navigate: (path: string) => void
         { path: 'teacher_attendance_history', name: 'Attendance History', description: 'View and correct past attendance records.' },
         { path: 'teacher_grades_entry', name: 'Grade Entry', description: 'Enter scores and comments for an assessment.' },
         { path: 'teacher_grade_history', name: 'Grade History', description: 'View past assessment scores and statistics.' },
+        { path: 'teacher_homework_list', name: 'Homework List', description: 'View and manage assigned homework.' },
         { path: 'teacher_homework', name: 'Post Homework', description: 'Create and assign homework to a class.' },
+        { path: 'teacher_announcement', name: 'Post Announcement', description: 'Create and post announcements to classes.' },
+        { path: 'teacher_roster', name: 'Class Roster', description: 'View student list and parent contact information.' },
+        { path: 'teacher_profile', name: 'Teacher Profile', description: 'View and edit profile information and settings.' },
+        { path: 'admin_dashboard', name: 'Admin Dashboard', description: 'Overview of school statistics and quick links for administrators.' },
         { path: 'legal', name: 'Legal & Policies', description: 'Terms of Service and Privacy Policy.' },
     ];
 

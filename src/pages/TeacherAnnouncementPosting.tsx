@@ -2,29 +2,23 @@ import React, { useState } from 'react';
 import { 
     LayoutDashboard, Users, BookOpen, FileText, Bell, 
     LogOut, Menu, FileX, BookMarked, MessageSquare, User,
-    FileEdit, ClipboardList, PenTool, CheckSquare, PlusCircle
+    CheckSquare, ChevronLeft, Upload, Send, Users2
 } from 'lucide-react';
 
-export default function TeacherDashboard({ navigate }: { navigate: (path: string) => void }) {
+export default function TeacherAnnouncementPosting({ navigate }: { navigate: (path: string) => void }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [selectedClass, setSelectedClass] = useState("class1");
     
     const navItems = [
-        { icon: LayoutDashboard, label: 'Dashboard', path: 'teacher_dashboard', active: true },
+        { icon: LayoutDashboard, label: 'Dashboard', path: 'teacher_dashboard', active: false },
         { icon: Users, label: 'Classes & Subjects', path: 'teacher_classes', active: false },
         { icon: CheckSquare, label: 'Attendance', path: 'teacher_attendance', active: false },
         { icon: BookMarked, label: 'Homework', path: 'teacher_homework_list', active: false },
         { icon: FileText, label: 'Grades', path: 'teacher_grades_entry', active: false },
-        { icon: MessageSquare, label: 'Announcements', path: 'teacher_announcement', active: false },
+        { icon: MessageSquare, label: 'Announcements', path: 'teacher_announcement', active: true },
         { icon: User, label: 'Profile', path: 'teacher_profile', active: false },
         { icon: LogOut, label: 'Logout', path: 'login', active: false },
         { icon: Menu, label: 'Sitemap', path: 'sitemap', active: false }
-    ];
-
-    const classes = [
-        { id: 1, name: 'Grade 4 Gold', subject: 'Mathematics', students: 32, schedule: 'Mon, Wed, Fri - 08:00 AM' },
-        { id: 2, name: 'Grade 4 Gold', subject: 'Science', students: 32, schedule: 'Tue, Thu - 10:00 AM' },
-        { id: 3, name: 'Grade 5 Silver', subject: 'Mathematics', students: 28, schedule: 'Mon, Wed, Fri - 11:30 AM' },
-        { id: 4, name: 'Grade 6 Bronze', subject: 'Science', students: 30, schedule: 'Tue, Thu - 01:00 PM' }
     ];
 
     return (
@@ -71,20 +65,24 @@ export default function TeacherDashboard({ navigate }: { navigate: (path: string
             )}
 
             {/* Main Content */}
-            <div className="md:ml-[260px] flex flex-col min-h-screen">
+            <div className="md:ml-[260px] flex flex-col min-h-screen pb-20 md:pb-0">
                 {/* Topbar */}
                 <header className="h-[72px] bg-white border-b border-gray-200 px-4 md:px-8 flex items-center justify-between sticky top-0 z-30">
                     <div className="flex items-center gap-4">
                         <button className="md:hidden text-gray-600" onClick={() => setIsMobileMenuOpen(true)}>
                             <Menu className="w-6 h-6" />
                         </button>
-                        <h2 className="text-xl font-bold text-[#1F3864] hidden sm:block">Teacher Dashboard</h2>
+                        <div className="flex items-center gap-3 hidden sm:flex">
+                            <button onClick={() => navigate('teacher_dashboard')} className="text-gray-400 hover:text-[#1F3864] transition-colors">
+                                <ChevronLeft className="w-5 h-5" />
+                            </button>
+                            <h2 className="text-xl font-bold text-[#1F3864]">Post Announcement</h2>
+                        </div>
                     </div>
 
                     <div className="flex items-center gap-4">
                         <button className="p-2 text-gray-500 hover:bg-[#DCE6F1] rounded-full transition-colors relative">
                             <Bell className="w-5 h-5" />
-                            <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                         </button>
                         <div className="h-8 w-px bg-gray-200"></div>
                         <div className="flex items-center gap-3">
@@ -100,72 +98,80 @@ export default function TeacherDashboard({ navigate }: { navigate: (path: string
                 </header>
 
                 {/* Dashboard Content */}
-                <main className="flex-1 p-4 md:p-8 max-w-5xl mx-auto w-full space-y-8">
-                    
-                    {/* Welcome Section */}
-                    <div>
-                        <h3 className="text-2xl font-bold text-[#1F3864]">Welcome back, Mr. Addo!</h3>
-                        <p className="text-gray-600 font-semibold text-sm mt-1">Here is an overview of your classes and tasks for today.</p>
-                    </div>
+                <main className="flex-1 p-4 md:p-8 max-w-3xl mx-auto w-full space-y-6">
+                    <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 md:p-8">
+                        <h3 className="text-xl font-bold text-[#1F3864] mb-6 flex items-center gap-2">
+                            <MessageSquare className="w-5 h-5 text-gray-400" />
+                            Create New Announcement
+                        </h3>
+                        
+                        <div className="space-y-6">
+                            {/* Class Selector */}
+                            <div>
+                                <label className="block text-sm font-bold text-[#1F3864] mb-2 flex items-center gap-2">
+                                    <Users2 className="w-4 h-4 text-gray-400" />
+                                    Target Audience
+                                </label>
+                                <select 
+                                    value={selectedClass}
+                                    onChange={(e) => setSelectedClass(e.target.value)}
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-[#1F3864] focus:ring-1 focus:ring-[#1F3864] font-semibold text-[#1F3864] bg-white transition-colors cursor-pointer"
+                                >
+                                    <option value="class1">Grade 4 Gold - All Students & Parents</option>
+                                    <option value="class2">Grade 4 Gold - Mathematics Only</option>
+                                    <option value="class3">Grade 5 Silver - All Students & Parents</option>
+                                    <option value="all">All My Classes</option>
+                                </select>
+                            </div>
 
-                    {/* Quick Actions */}
-                    <div>
-                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Quick Actions</h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <button 
-                                onClick={() => navigate('teacher_attendance')}
-                                className="bg-[#1F3864] text-white rounded-xl p-5 flex flex-col items-center justify-center gap-3 hover:bg-[#162a4d] transition-colors shadow-sm"
-                            >
-                                <ClipboardList className="w-8 h-8" />
-                                <span className="font-bold">Mark Attendance Today</span>
-                            </button>
-                            <button 
-                                onClick={() => navigate('teacher_homework')}
-                                className="bg-white border border-[#1F3864]/20 text-[#1F3864] rounded-xl p-5 flex flex-col items-center justify-center gap-3 hover:bg-[#DCE6F1] transition-colors shadow-sm"
-                            >
-                                <FileEdit className="w-8 h-8" />
-                                <span className="font-bold">Post Homework</span>
-                            </button>
-                            <button 
-                                onClick={() => navigate('teacher_announcement')}
-                                className="bg-white border border-[#1F3864]/20 text-[#1F3864] rounded-xl p-5 flex flex-col items-center justify-center gap-3 hover:bg-[#DCE6F1] transition-colors shadow-sm"
-                            >
-                                <MessageSquare className="w-8 h-8" />
-                                <span className="font-bold">Post Announcement</span>
-                            </button>
-                        </div>
-                    </div>
+                            {/* Title */}
+                            <div>
+                                <label className="block text-sm font-bold text-[#1F3864] mb-2">Announcement Title</label>
+                                <input 
+                                    type="text" 
+                                    placeholder="e.g., Upcoming Excursion to the Museum" 
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-[#1F3864] focus:ring-1 focus:ring-[#1F3864] font-semibold text-[#1F3864] transition-colors"
+                                />
+                            </div>
 
-                    {/* Assigned Classes */}
-                    <div>
-                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">My Classes & Subjects</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {classes.map((cls) => (
-                                <div key={cls.id} className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:border-[#1F3864]/30 transition-colors">
-                                    <div className="flex justify-between items-start mb-4">
-                                        <div>
-                                            <h5 className="text-lg font-bold text-[#1F3864]">{cls.name}</h5>
-                                            <p className="text-sm font-bold text-gray-500 mt-1">{cls.subject}</p>
-                                        </div>
-                                        <div className="bg-[#DCE6F1] text-[#1F3864] px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5">
-                                            <Users className="w-3.5 h-3.5" />
-                                            {cls.students} Students
-                                        </div>
+                            {/* Message Body */}
+                            <div>
+                                <label className="block text-sm font-bold text-[#1F3864] mb-2">Message Body</label>
+                                <textarea 
+                                    rows={6}
+                                    placeholder="Type your message here..."
+                                    className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-[#1F3864] focus:ring-1 focus:ring-[#1F3864] text-gray-700 transition-colors resize-y"
+                                ></textarea>
+                            </div>
+
+                            {/* File Attachment */}
+                            <div>
+                                <label className="block text-sm font-bold text-[#1F3864] mb-2">Attachments (Optional)</label>
+                                <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 transition-colors cursor-pointer group">
+                                    <div className="w-12 h-12 bg-[#DCE6F1] rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                        <Upload className="w-6 h-6 text-[#1F3864]" />
                                     </div>
-                                    <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                                        <p className="text-xs font-semibold text-gray-500 flex items-center gap-1.5">
-                                            <BookOpen className="w-4 h-4" />
-                                            {cls.schedule}
-                                        </p>
-                                        <button className="text-sm font-bold text-[#1F3864] hover:underline">
-                                            Manage Class
-                                        </button>
-                                    </div>
+                                    <p className="text-sm font-bold text-[#1F3864] mb-1">Click to upload or drag and drop</p>
+                                    <p className="text-xs font-semibold text-gray-500">PDF, DOCX, JPG, PNG (Max 10MB)</p>
                                 </div>
-                            ))}
+                            </div>
+
+                        </div>
+
+                        {/* Actions */}
+                        <div className="flex justify-end gap-3 pt-8 mt-8 border-t border-gray-100">
+                            <button 
+                                onClick={() => navigate('teacher_dashboard')}
+                                className="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 font-bold rounded-lg hover:bg-gray-50 transition-colors w-full sm:w-auto"
+                            >
+                                Cancel
+                            </button>
+                            <button className="px-6 py-2.5 bg-[#1F3864] text-white font-bold rounded-lg hover:bg-[#162a4d] transition-colors shadow-sm flex items-center justify-center gap-2 w-full sm:w-auto">
+                                <Send className="w-4 h-4" />
+                                Post Announcement
+                            </button>
                         </div>
                     </div>
-
                 </main>
             </div>
             

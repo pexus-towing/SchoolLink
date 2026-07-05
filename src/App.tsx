@@ -24,6 +24,11 @@ import TeacherAttendanceHistory from './pages/TeacherAttendanceHistory';
 import TeacherGradeEntry from './pages/TeacherGradeEntry';
 import TeacherGradeHistory from './pages/TeacherGradeHistory';
 import TeacherHomeworkPosting from './pages/TeacherHomeworkPosting';
+import TeacherHomeworkList from './pages/TeacherHomeworkList';
+import TeacherAnnouncementPosting from './pages/TeacherAnnouncementPosting';
+import TeacherClassRoster from './pages/TeacherClassRoster';
+import TeacherProfile from './pages/TeacherProfile';
+import AdminDashboard from './pages/AdminDashboard';
 import Sitemap from './pages/Sitemap';
 import { Map } from 'lucide-react';
 
@@ -56,7 +61,12 @@ export default function App() {
             case 'teacher_attendance_history': return <TeacherAttendanceHistory navigate={setRoute} />;
             case 'teacher_grades_entry': return <TeacherGradeEntry navigate={setRoute} />;
             case 'teacher_grade_history': return <TeacherGradeHistory navigate={setRoute} />;
+            case 'teacher_homework_list': return <TeacherHomeworkList navigate={setRoute} />;
             case 'teacher_homework': return <TeacherHomeworkPosting navigate={setRoute} />;
+            case 'teacher_announcement': return <TeacherAnnouncementPosting navigate={setRoute} />;
+            case 'teacher_roster': return <TeacherClassRoster navigate={setRoute} />;
+            case 'teacher_profile': return <TeacherProfile navigate={setRoute} />;
+            case 'admin_dashboard': return <AdminDashboard navigate={setRoute} />;
             case 'sitemap': return <Sitemap navigate={setRoute} />;
             default: return <Splash navigate={setRoute} />;
         }

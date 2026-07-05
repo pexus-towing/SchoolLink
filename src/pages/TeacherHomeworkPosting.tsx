@@ -13,10 +13,10 @@ export default function TeacherHomeworkPosting({ navigate }: { navigate: (path: 
         { icon: LayoutDashboard, label: 'Dashboard', path: 'teacher_dashboard', active: false },
         { icon: Users, label: 'Classes & Subjects', path: 'teacher_classes', active: false },
         { icon: CheckSquare, label: 'Attendance', path: 'teacher_attendance', active: false },
-        { icon: BookMarked, label: 'Homework', path: 'teacher_homework', active: true },
+        { icon: BookMarked, label: 'Homework', path: 'teacher_homework_list', active: true },
         { icon: FileText, label: 'Grades', path: 'teacher_grades_entry', active: false },
-        { icon: MessageSquare, label: 'Announcements', path: '#', active: false },
-        { icon: User, label: 'Profile', path: '#', active: false },
+        { icon: MessageSquare, label: 'Announcements', path: 'teacher_announcement', active: false },
+        { icon: User, label: 'Profile', path: 'teacher_profile', active: false },
         { icon: LogOut, label: 'Logout', path: 'login', active: false },
         { icon: Menu, label: 'Sitemap', path: 'sitemap', active: false }
     ];
@@ -177,7 +177,10 @@ export default function TeacherHomeworkPosting({ navigate }: { navigate: (path: 
 
                         {/* Actions */}
                         <div className="flex justify-end gap-3 pt-8 mt-8 border-t border-gray-100">
-                            <button className="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 font-bold rounded-lg hover:bg-gray-50 transition-colors w-full sm:w-auto">
+                            <button 
+                                onClick={() => navigate('teacher_homework_list')}
+                                className="px-6 py-2.5 bg-white border border-gray-200 text-gray-600 font-bold rounded-lg hover:bg-gray-50 transition-colors w-full sm:w-auto"
+                            >
                                 Cancel
                             </button>
                             <button className="px-6 py-2.5 bg-[#1F3864] text-white font-bold rounded-lg hover:bg-[#162a4d] transition-colors shadow-sm flex items-center justify-center gap-2 w-full sm:w-auto">

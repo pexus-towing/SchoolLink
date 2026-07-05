@@ -14,10 +14,10 @@ export default function TeacherAttendanceHistory({ navigate }: { navigate: (path
         { icon: LayoutDashboard, label: 'Dashboard', path: 'teacher_dashboard', active: false },
         { icon: Users, label: 'Classes & Subjects', path: 'teacher_classes', active: false },
         { icon: CheckSquare, label: 'Attendance', path: 'teacher_attendance', active: true },
-        { icon: BookMarked, label: 'Homework', path: 'teacher_homework', active: false },
+        { icon: BookMarked, label: 'Homework', path: 'teacher_homework_list', active: false },
         { icon: FileText, label: 'Grades', path: 'teacher_grades_entry', active: false },
-        { icon: MessageSquare, label: 'Announcements', path: '#', active: false },
-        { icon: User, label: 'Profile', path: '#', active: false },
+        { icon: MessageSquare, label: 'Announcements', path: 'teacher_announcement', active: false },
+        { icon: User, label: 'Profile', path: 'teacher_profile', active: false },
         { icon: LogOut, label: 'Logout', path: 'login', active: false },
         { icon: Menu, label: 'Sitemap', path: 'sitemap', active: false }
     ];

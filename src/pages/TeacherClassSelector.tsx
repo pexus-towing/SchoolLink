@@ -12,10 +12,10 @@ export default function TeacherClassSelector({ navigate }: { navigate: (path: st
         { icon: LayoutDashboard, label: 'Dashboard', path: 'teacher_dashboard', active: false },
         { icon: Users, label: 'Classes & Subjects', path: 'teacher_classes', active: true },
         { icon: CheckSquare, label: 'Attendance', path: 'teacher_attendance', active: false },
-        { icon: BookMarked, label: 'Homework', path: 'teacher_homework', active: false },
+        { icon: BookMarked, label: 'Homework', path: 'teacher_homework_list', active: false },
         { icon: FileText, label: 'Grades', path: 'teacher_grades_entry', active: false },
-        { icon: MessageSquare, label: 'Announcements', path: '#', active: false },
-        { icon: User, label: 'Profile', path: '#', active: false },
+        { icon: MessageSquare, label: 'Announcements', path: 'teacher_announcement', active: false },
+        { icon: User, label: 'Profile', path: 'teacher_profile', active: false },
         { icon: LogOut, label: 'Logout', path: 'login', active: false },
         { icon: Menu, label: 'Sitemap', path: 'sitemap', active: false }
     ];
@@ -132,11 +132,20 @@ export default function TeacherClassSelector({ navigate }: { navigate: (path: st
                                     </div>
                                 </div>
                                 
-                                <div className="mt-auto pt-4 border-t border-gray-100 w-full">
+                                <div className="mt-auto pt-4 border-t border-gray-100 w-full flex items-center justify-between">
                                     <p className="text-sm font-semibold text-gray-500 flex items-center gap-2">
                                         <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                                        Schedule: {cls.schedule}
+                                        {cls.schedule}
                                     </p>
+                                    <button 
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            navigate('teacher_roster');
+                                        }}
+                                        className="text-sm font-bold text-[#1F3864] hover:underline"
+                                    >
+                                        View Roster
+                                    </button>
                                 </div>
                             </button>
                         ))}
